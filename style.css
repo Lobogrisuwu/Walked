@@ -1,0 +1,160 @@
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.dark-mode header {
+  background-color: #000000;
+}
+
+body.dark-mode #main-app {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode button:hover {
+  background-color: #444444;
+}
+
+body.dark-mode input {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+body.dark-mode #auth-container {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode #register-form,
+body.dark-mode #login-form {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode footer {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#auth-container, #main-app {
+  padding: 20px;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 300px;
+}
+
+header {
+  background-color: #0a3557;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  height: 60px;
+}
+
+main {
+  padding: 20px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0a3557;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #06243b;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#botonFlotante {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #0a3557;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  #botonFlotante {
+    display: block;
+
+.atajos-teclado {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.atajos-teclado h3 {
+  margin-top: 0;
+}
+
+.atajos-teclado ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.atajos-teclado li {
+  margin: 5px 0;
+}
+
+  }
+}

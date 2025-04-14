@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Walked</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="attached_assets/logo_1744659477135.png" alt="Walked Logo" class="logo" />
+      <h1>Walked</h1>
+      <p>Rutas seguras para caminar</p>
+    </header>
+
+      <div class="atajos-teclado">
+        <h3>Atajos de teclado:</h3>
+        <ul>
+          <li>'P' - Marcar Puente Roto</li>
+          <li>'S' - Marcar Paso Peatonal sin Pintar</li>
+          <li>'C' - Marcar Construcción</li>
+          <li>'Z' - Marcar Zona de Choque</li>
+          <li>'X' - Marcar Zona Cerrada</li>
+        </ul>
+      </div>
+
+
+    <main>
+      <div id="auth-container">
+        <div id="register-form">
+          <h2>Registrarse</h2>
+          <input type="text" id="reg-username" placeholder="Nombre de usuario">
+          <input type="password" id="reg-password" placeholder="Contraseña">
+          <button onclick="register()">Registrarse</button>
+          <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
+        </div>
+
+        <div id="login-form" style="display:none;">
+          <h2>Iniciar Sesión</h2>
+          <input type="text" id="login-username" placeholder="Nombre de usuario">
+          <input type="password" id="login-password" placeholder="Contraseña">
+          <button onclick="login()">Iniciar Sesión</button>
+          <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+        </div>
+      </div>
+
+      <div id="main-app" style="display:none;">
+        <h2>Bienvenido a Walked</h2>
+        <button onclick="logout()">Cerrar sesión</button>
+        <input id="origin" list="originSuggestions" placeholder="Origen (ej. Catedral GDL)" />
+        <datalist id="originSuggestions"></datalist>
+        <input id="destination" list="destinationSuggestions" placeholder="Destino (ej. Expo GDL)" />
+        <datalist id="destinationSuggestions"></datalist>
+      <select id="travelMode" style="padding: 8px; margin: 5px;">
+        <option value="WALKING">A pie 🚶</option>
+        <option value="BICYCLING">En bicicleta 🚲</option>
+      </select>
+      <button onclick="calculateRoute()">Buscar Ruta</button>
+      <button onclick="mostrarMenuZonaPeligrosa()">Reportar Zona Peligrosa</button>
+      <button onclick="cambiarModo()">Cambiar Modo Oscuro</button>
+      <div id="map"></div>
+      <button id="botonFlotante" onclick="mostrarMenuZonaPeligrosa()">M</button>
+
+      <!-- Modal para zona peligrosa -->
+      <div id="zonaPeligrosaModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5); z-index: 1000;">
+        <h3>Marcar Zona Peligrosa</h3>
+        <select id="tipoPeligro">
+          <option value="puente_roto">Puente Roto</option>
+          <option value="paso_peatonal">Paso Peatonal sin Pintar</option>
+          <option value="zona_choque">Zona de Choque</option>
+          <option value="zona_cerrada">Zona Cerrada</option>
+          <option value="construccion">Construcción</option>
+        </select>
+        <p>Haz clic en el mapa para marcar la ubicación</p>
+        <button onclick="iniciarMarcadoZona()">Comenzar</button>
+        <button onclick="cerrarModal()">Cancelar</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>Walked - Prototipo 2025</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwxUZ4_MAy2NgRFlsLV1uI4d86JH_VsCg&libraries=places&callback=initMap">
+    </script>
+
